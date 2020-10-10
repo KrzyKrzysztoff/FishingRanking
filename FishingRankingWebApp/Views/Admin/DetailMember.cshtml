@@ -1,0 +1,39 @@
+﻿@model Member
+<div class="container">
+    <div class="row">
+
+        <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+
+            <div class="card card-signin my-5 ">
+                <div class="card-body">
+
+
+                    <form class="form-signin" method="post">
+                        <img src="@Model.PhotoPath" class="rounded mx-auto d-block MiniPhoto  img-thumbnail" alt="Alternate Text" />
+                        <br />
+                        <div class="form-label-group">
+
+                            <label class="form-control ">@Model.Id</label>
+                        </div>
+                        <br />
+                        <div class="form-label-group">
+                            <label class="form-control" placeholder="Imię">@Model.FirstName</label>
+                        </div>
+                        <br />
+                        <div class="form-label-group">
+                            <label class="form-control" placeholder="Nazwisko">@Model.LastName</label>
+                        </div>
+                        <br />
+                        <div class="form-label-group">
+                            <label class="form-control">@Model.AmmountOfPoints</label>
+                        </div>
+                        <br />
+                        <button class="btn btn-lg btn-dark btn-block" asp-action="EditUser" asp-controller="Admin" type="submit">Edycja</button>
+                        <button class="btn btn-lg btn-primary btn-block" asp-action="ListOfUsers" asp-controller="Admin" type="submit">Lista Użytkowników</button>
+                        <hr class="my-4">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,74 @@
+﻿@inject SignInManager<IdentityUser> signInManager;
+<!DOCTYPE html>
+
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/twitter-bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <script src="~/twitter-bootstrap/js/bootstrap.js"></script>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-sm bg-light navbar-light" style="">
+        <ul class="navbar-nav">
+            @if (signInManager.IsSignedIn(User))
+            {
+
+                <li class="nav-item active">
+                    <a formmethod="post" class="nav-link bg-info" asp-action="Punctation" asp-controller="User">Punktacja</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link bg-success" asp-action="AddFish" asp-controller="User">Dodaj rybę</a>
+                </li>
+                <li class="nav-item active ">
+                    <a class="nav-link bg-warning" asp-action="Ranking" asp-controller="User">Ranking</a>
+                </li>
+            }
+
+            @if (signInManager.IsSignedIn(User) && User.IsInRole("admin"))
+            {
+
+                <li class="nav-item active">
+                    <a class="nav-link bg-primary" asp-action="ListOfMembers" asp-controller="Admin">Uczestnicy</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link bg-danger" asp-action="FishToCheck" asp-controller="Admin">Do zatwierdzenia</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link bg-dark" asp-action="AddMember" asp-controller="Admin">Dodaj wędkarza</a>
+                </li>
+
+            }
+
+
+        </ul>
+        <ul class="navbar-nav ml-auto">
+            @if (signInManager.IsSignedIn(User))
+            {
+
+                <li class="nav-item active">
+                    <form method="post" asp-action="Logout" asp-controller="Account">
+                        <a  class="nav-link btn btn-link py-0">
+                            Wyloguj: @User.Identity.Name
+                        </a>
+                    </form>
+                </li>
+            }
+            else
+            {
+               
+                <li class="nav-item active">
+                    <a class="nav-link" asp-action="Login" asp-controller="Account">Zaloguj</a>
+                </li>
+            }
+
+        </ul>
+    </nav>
+    <div>
+        @RenderBody()
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+﻿@model IEnumerable<Member>
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Imię</th>
+            <th scope="col">Nazwisko</th>
+            <th scope="col">Punkty</th>
+            <th scope="col">Ostatnia Ryba</th>
+            <th scope="col">Ostatnia Aktywność</th>
+            <th scope="col">Specjalizacja</th>
+            <th scope="col">Avatar</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <th scope="row">1</th>
+                <td>@item.FirstName</td>
+                <td>@item.LastName</td>
+                <td>@item.AmmountOfPoints</td>
+                <td>
+                    @switch (item.LastCaughtFish)
+                    {
+                        case KindOfFish.pike:
+                            <p>Szczupak</p>
+                            break;
+                        case KindOfFish.catfish:
+                            <p>Sum</p>
+                            break;
+                        case KindOfFish.perch:
+                            <p>Okoń</p>
+                            break;
+                        case KindOfFish.trout:
+                            <p>Pstrąg</p>
+                            break;
+                        case KindOfFish.chub:
+                            <p>Kleń</p>
+                            break;
+                        case KindOfFish.zander:
+                            <p>Zander</p>
+                            break;
+                        case KindOfFish.asp:
+                            <p>Boleń</p>
+                            break;
+                        default:
+                            break;
+                    }
+                </td>
+                <td>@String.Format("{0:MM/dd/yyy}", item.RecentActivity)</td>
+               
+                <td> <img src="~/images/logo.jpg" style="width:100px;height:auto;" /></td>
+            </tr>
+        }
+    </tbody>
+</table>

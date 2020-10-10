@@ -1,0 +1,37 @@
+﻿@model LoginViewModel
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+                <div class="card card-signin my-5 ">
+                    <div class="card-body">
+                        <img src="~/images/logo.jpg" class="rounded mx-auto d-block MiniPhoto  img-thumbnail" alt="Alternate Text" style="width:200px; height:auto;"/>
+                        <br />
+                        <form class="form-signin" method="post">
+                            <div asp-validation-summary="All" class="text-danger">
+                                <div class="form-label-group">
+                                    <input class="form-control" placeholder="Login" asp-for="@Model.Login" autofocus>
+                                    <span asp-validation-for="@Model.Login" class="text-danger"></span>
+                                    <br />
+                                </div>
+                                <div class="form-label-group">
+                                    <input asp-for="@Model.Passowrd" class="form-control" placeholder="Hasło">
+                                    <span asp-validation-for="@Model.Passowrd" class="text-danger"></span>
+                                </div>
+                                <div class="custom-control custom-checkbox mb-3">
+                                    <br />
+                                    <input type="checkbox" class="custom-control-input">
+                                    <label class="custom-control-label" asp-for="@Model.RememberMe">
+                                        @Html.DisplayNameFor(s => s.RememberMe)
+                                    </label>
+                                </div>
+                                <button class="btn btn-lg btn-dark btn-block" type="submit">Zaloguj się</button>
+                                <hr class="my-4">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
