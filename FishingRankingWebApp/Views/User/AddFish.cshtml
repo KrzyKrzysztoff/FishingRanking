@@ -1,6 +1,7 @@
 ﻿
 @model FishingRankingWebApp.ViewModels.FishViewModel
 @inject SignInManager<IdentityUser> signInManager;
+    <h1 class="bg-danger" style="text-align:center">Dodaj rybę</h1>
 <div class="container">
     <div class="row">
 
@@ -30,6 +31,7 @@
                         <br />
                         <div class="form-label-group">
                             <select asp-for="@Model.KindOfFish" asp-items="Html.GetEnumSelectList<KindOfFish>()">
+                        
                                 <option selected="selected" value="">Wybierz rybę</option>
                             </select>
                         </div>

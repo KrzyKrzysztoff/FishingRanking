@@ -14,11 +14,16 @@ namespace FishingRankingWebApp.Models
     {
         [Key]
         public int Id { get; set; }
+        [Required]
         public string FirstName { get; set; }
+        [Required]
         public string LastName { get; set; }
+        [Required]
         public int AmmountOfPoints { get; set; }
+        [Required]
         public DateTime RecentActivity { get; set; }
         public string PhotoPath { get; set; }
+       
         public KindOfFish LastCaughtFish { get; set; }
         public virtual ICollection<Fish> Fishes { get; set; }
 

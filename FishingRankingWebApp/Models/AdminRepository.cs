@@ -31,11 +31,11 @@ namespace FishingRankingWebApp.Models
 
         public void EditMember(Member member)
         {
-            var user = GetMember(member.Id);
-            user.FirstName = member.FirstName;
-            user.AmmountOfPoints = member.AmmountOfPoints;
-            user.LastName = member.LastName;
-        
+            var newUser = GetMember(member.Id);
+            newUser.FirstName = member.FirstName;
+            newUser.AmmountOfPoints = member.AmmountOfPoints;
+            newUser.LastName = member.LastName;
+            context.SaveChanges();
         }
 
         public Member GetMember(int id)

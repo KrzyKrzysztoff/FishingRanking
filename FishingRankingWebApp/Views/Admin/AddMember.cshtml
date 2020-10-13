@@ -1,4 +1,5 @@
 ﻿@model Member
+    <h1 class="bg-danger" style="text-align:center">Dodaj wędkarza</h1>
 <div class="container">
     <div class="row">
         <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
@@ -18,7 +19,7 @@
                         <br />
                         <div class="form-label-group">
                             <label class="col-form-label-lg" style="text-align:center;display:block;">Liczba Punktów</label>
-                            <input class="form-control" asp-for="@Model.AmmountOfPoints" placeholder="AmountOfPoints">
+                            <input class="form-control" asp-for="@Model.AmmountOfPoints" placeholder="Punkty">
                         </div>
                         <br />
                         <button class="btn btn-lg btn-dark btn-block" asp-action="AddMember" asp-controller="Admin" type="submit">Dodaj Wędkarza</button>

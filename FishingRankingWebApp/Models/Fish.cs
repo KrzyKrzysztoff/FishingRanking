@@ -12,10 +12,14 @@ namespace FishingRankingWebApp.Models
     {
         [Key]
         public int Id { get; set; }
+        [Required]
         public string Name { get; set; }
         public int Point { get; set; }
+        [Required]
         public KindOfFish KindOfFish { get; set; }
+        [Required]
         public string Location { get; set; }
+        [Required]
         public int Lenght { get; set; }
 
         [ForeignKey("Members")]

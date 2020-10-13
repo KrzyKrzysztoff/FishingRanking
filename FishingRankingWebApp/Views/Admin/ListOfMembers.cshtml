@@ -1,6 +1,6 @@
 ﻿@model IEnumerable<Member>
 
-    
+    <h1 class="bg-danger" style="text-align:center">Ranking</h1>
         <table class="table">
             <thead class="thead-dark">
                 <tr>
@@ -60,7 +60,7 @@
                         <td>
                             <form>
                                 <div>
-                                    <button type="submit" asp-action="DetailUser" asp-controller="Admin" asp-route-id="@item.Id" class="btn-block btn-primary">Detale</button>
+                                    <button type="submit" asp-action="DetailMember" asp-controller="Admin" asp-route-id="@item.Id" class="btn-block btn-primary">Detale</button>
                                     <button type="submit" asp-action="DeleteMember" asp-controller="Admin" asp-route-id="@item.Id" class="btn-block btn-danger">Usuń</button>
                                     <button type="submit" asp-action="EditUser" asp-controller="Admin" asp-route-id="@item.Id" class="btn-block btn-dark">Edytuj</button>
                                 </div>

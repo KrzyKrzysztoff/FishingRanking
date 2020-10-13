@@ -37,12 +37,13 @@ namespace FishingRankingWebApp.Controllers
         [HttpPost]
         public IActionResult EditUser(Member member)
         {
+            
             adminRepository.EditMember(member);
             var list = adminRepository.ListOfMembers();
             return View("ListOfMembers", list);
         }
         [HttpGet]
-        public IActionResult EdiUser(int id)
+        public IActionResult EditUser(int id)
         {
             var member = adminRepository.GetMember(id);
             return View(member);
