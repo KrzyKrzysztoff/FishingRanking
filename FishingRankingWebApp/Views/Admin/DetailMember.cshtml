@@ -9,27 +9,30 @@
 
 
                     <form class="form-signin" method="post">
-                        <img src="@Model.PhotoPath" class="rounded mx-auto d-block MiniPhoto  img-thumbnail" alt="Alternasdate Text" />
+                   
                         <br />
                         <div class="form-label-group">
-
+                            <label class="col-form-label-lg" style="text-align:center;display:block;">ID</label>
                             <label class="form-control ">@Model.Id</label>
                         </div>
                         <br />
                         <div class="form-label-group">
+                            <label class="col-form-label-lg" style="text-align:center;display:block;">IMIĘ</label>
                             <label class="form-control" placeholder="Imię">@Model.FirstName</label>
                         </div>
                         <br />
                         <div class="form-label-group">
+                            <label class="col-form-label-lg" style="text-align:center;display:block;">NAZWISKO</label>
                             <label class="form-control" placeholder="Nazwisko">@Model.LastName</label>
                         </div>
                         <br />
                         <div class="form-label-group">
+                            <label class="col-form-label-lg" style="text-align:center;display:block;">PUNKTY</label>
                             <label class="form-control">@Model.AmmountOfPoints</label>
                         </div>
                         <br />
                         <button class="btn btn-lg btn-dark btn-block" asp-action="EditUser" asp-controller="Admin" type="submit">Edycja</button>
-                        <button class="btn btn-lg btn-primary btn-block" asp-action="ListOfUsers" asp-controller="Admin" type="submit">Lista Użytkowników</button>
+                        <button class="btn btn-lg btn-primary btn-block" asp-action="ListOfMembers" asp-controller="Admin" type="submit">Lista Użytkowników</button>
                         <hr class="my-4">
                     </form>
                 </div>

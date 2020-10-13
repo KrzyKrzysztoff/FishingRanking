@@ -27,6 +27,7 @@ namespace FishingRankingWebApp
         }
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddTransient<IHomeRepository, HomeRepository>();
             services.AddTransient<IUserRepository, UserRepository>();
             services.AddTransient<IAdminRepository, AdminRepository>();
 

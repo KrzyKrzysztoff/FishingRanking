@@ -1,5 +1,69 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿@model IEnumerable<Fish>
+@inject SignInManager<IdentityUser> signInManager;
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <p>Ostatnio dodane ryby!</p>
+    @foreach (var item in Model)
+    {
+        if (User.IsInRole("admin"))
+        {
+            <form method="post">
+                <button class="bg-danger" type="submit" asp-action="DeleteFish" asp-controller="Home" asp-route-id="@item.Id">Usuń rybkę</button>
+            </form>
+        }
+        <p>Długość: </p> @item.Lenght;
+        @switch (item.MemberId)
+        {
+            case 1:
+                <p>Ryba od K.J</p>
+                break;
+            case 2:
+                <p>Ryba od T.K</p>
+                break;
+            case 3:
+                <p>Ryba od T.J</p>
+                break;
+            case 4:
+                <p>Ryba od R.B</p>
+                break;
+            default:
+                break;
+        }
+        <p>Rodzaj ryby</p>
+        @switch (item.KindOfFish)
+        {
+            case KindOfFish.empty:
+                <p>Brak</p>
+                break;
+            case KindOfFish.pike:
+                <p>Szczupak</p>
+                break;
+            case KindOfFish.perch:
+                <p>Okoń</p>
+                break;
+            case KindOfFish.catfish:
+                <p>Sum</p>
+                break;
+            case KindOfFish.zander:
+                <p>Sandacz</p>
+                break;
+            case KindOfFish.chub:
+                <p>Kleń</p>
+                break;
+            case KindOfFish.asp:
+                <p>Boleń</p>
+                break;
+            case KindOfFish.trout:
+                <p>Pstrąg</p>
+                break;
+            default:
+                break;
+        }
+        <br />
+    }
+</body>
+</html>

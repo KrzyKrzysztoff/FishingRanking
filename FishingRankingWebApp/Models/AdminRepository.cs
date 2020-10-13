@@ -21,6 +21,7 @@ namespace FishingRankingWebApp.Models
             return user;
         }
 
+       
         public void DeleteMember(int id)
         {
             var user = context.Members.FirstOrDefault(s => s.Id == id);
@@ -28,9 +29,13 @@ namespace FishingRankingWebApp.Models
             context.SaveChanges();
         }
 
-        public Member EditMember(Member user)
+        public void EditMember(Member member)
         {
-            throw new NotImplementedException();
+            var user = GetMember(member.Id);
+            user.FirstName = member.FirstName;
+            user.AmmountOfPoints = member.AmmountOfPoints;
+            user.LastName = member.LastName;
+        
         }
 
         public Member GetMember(int id)

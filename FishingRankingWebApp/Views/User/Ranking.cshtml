@@ -8,15 +8,20 @@
             <th scope="col">Punkty</th>
             <th scope="col">Ostatnia Ryba</th>
             <th scope="col">Ostatnia Aktywność</th>
-            <th scope="col">Specjalizacja</th>
             <th scope="col">Avatar</th>
         </tr>
     </thead>
     <tbody>
-        @foreach (var item in Model)
+        @{
+            int i = 0;
+        };
+        @foreach (var item in Model.OrderByDescending(s=>s.AmmountOfPoints))
         {
+            {
+                i++;
+            }
             <tr>
-                <th scope="row">1</th>
+                <th scope="row">@i</th>
                 <td>@item.FirstName</td>
                 <td>@item.LastName</td>
                 <td>@item.AmmountOfPoints</td>
@@ -48,8 +53,8 @@
                             break;
                     }
                 </td>
-                <td>@String.Format("{0:MM/dd/yyy}", item.RecentActivity)</td>
-               
+                <td>@String.Format("{0:dd/MM/yyy}", item.RecentActivity)</td>
+
                 <td> <img src="~/images/logo.jpg" style="width:100px;height:auto;" /></td>
             </tr>
         }

@@ -11,7 +11,7 @@ namespace FishingRankingWebApp.Abstractions
         IEnumerable<Member> ListOfMembers();
         Member GetMember(int id);
         void DeleteMember(int id);
-        Member EditMember(Member user);
+        void EditMember(Member user);
         Member AddMember(Member user);
     }
 }

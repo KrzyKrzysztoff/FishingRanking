@@ -20,24 +20,28 @@
                     <a formmethod="post" class="nav-link bg-info" asp-action="Punctation" asp-controller="User">Punktacja</a>
                 </li>
                 <li class="nav-item active">
+                    <a formmethod="post" class="nav-link bg-secondary" asp-action="Index" asp-controller="Home">Ostatnio złapane ryby</a>
+                </li>
+                <li class="nav-item active">
                     <a class="nav-link bg-success" asp-action="AddFish" asp-controller="User">Dodaj rybę</a>
                 </li>
-                <li class="nav-item active ">
-                    <a class="nav-link bg-warning" asp-action="Ranking" asp-controller="User">Ranking</a>
-                </li>
+                @if (User.IsInRole("normalUser"))
+                {
+
+                    <li class="nav-item active ">
+                        <a class="nav-link bg-warning" asp-action="Ranking" asp-controller="User">Ranking</a>
+                    </li>
+                }
             }
 
             @if (signInManager.IsSignedIn(User) && User.IsInRole("admin"))
             {
 
                 <li class="nav-item active">
-                    <a class="nav-link bg-primary" asp-action="ListOfMembers" asp-controller="Admin">Uczestnicy</a>
+                    <a class="nav-link bg-primary" asp-action="ListOfMembers" asp-controller="Admin">Ranking</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link bg-danger" asp-action="FishToCheck" asp-controller="Admin">Do zatwierdzenia</a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link bg-dark" asp-action="AddMember" asp-controller="Admin">Dodaj wędkarza</a>
+                    <a class="nav-link bg-danger" asp-action="AddMember" asp-controller="Admin">Dodaj wędkarza</a>
                 </li>
 
             }
@@ -50,9 +54,9 @@
 
                 <li class="nav-item active">
                     <form method="post" asp-action="Logout" asp-controller="Account">
-                        <a  class="nav-link btn btn-link py-0">
+                        <button  class="nav-link btn btn-link py-0">
                             Wyloguj: @User.Identity.Name
-                        </a>
+                        </button>
                     </form>
                 </li>
             }

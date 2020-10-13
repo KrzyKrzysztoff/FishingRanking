@@ -1,5 +1,4 @@
 ﻿using FishingRankingWebApp.Models;
-using FishingRankingWebApp.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace FishingRankingWebApp.Abstractions
 {
-    public  interface IUserRepository
+    public interface IHomeRepository
     {
-        IEnumerable<Member> GetMembers();
-        void AddFish(FishViewModel fish, string userName);
-   
+        IEnumerable<Fish> GetListOfFishes();
+        IEnumerable<Fish> DeleteFish(int id);
     }
 }

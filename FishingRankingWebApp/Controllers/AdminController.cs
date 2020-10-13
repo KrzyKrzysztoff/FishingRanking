@@ -20,7 +20,7 @@ namespace FishingRankingWebApp.Controllers
         {
             adminRepository.DeleteMember(id);
             var list = adminRepository.ListOfMembers();
-            return View("ListOfUsers", list);
+            return View("ListOfMembers", list);
         }
         [HttpGet]
         public IActionResult DetailMember(int id)
@@ -34,23 +34,31 @@ namespace FishingRankingWebApp.Controllers
             var list = adminRepository.ListOfMembers();
             return View(list);
         }
-        public IActionResult FishToCheck()
-        {
-            return View();
-        }
-        [HttpGet]
-        public IActionResult EditMember(Member member)
-        {
-            
-            var user = adminRepository.EditMember(member);
-            return View(member);
-        }
         [HttpPost]
         public IActionResult EditUser(Member member)
         {
-            var newUser = adminRepository.EditMember(member);
-            return View("DetailUser", newUser);
+            adminRepository.EditMember(member);
+            var list = adminRepository.ListOfMembers();
+            return View("ListOfMembers", list);
         }
+        [HttpGet]
+        public IActionResult EdiUser(int id)
+        {
+            var member = adminRepository.GetMember(id);
+            return View(member);
+        }
+        [HttpGet]
+        public IActionResult AddMember()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult AddMember(Member member)
+        {
+            var user = adminRepository.AddMember(member);
+            return View("DetailMember", user);
+        }
+
   
     }
 }

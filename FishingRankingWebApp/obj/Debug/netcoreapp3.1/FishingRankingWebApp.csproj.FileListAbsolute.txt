@@ -380,8 +380,8 @@ C:\Users\krzys\Desktop\FishingRankingWebApp\FRSolution\FishingRankingWebApp\bin\
 C:\Users\krzys\Desktop\FishingRankingWebApp\FRSolution\FishingRankingWebApp\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
 C:\Users\krzys\Desktop\FishingRankingWebApp\FRSolution\FishingRankingWebApp\obj\Debug\netcoreapp3.1\Razor\Views\Admin\DetailMember.cshtml.g.cs
 C:\Users\krzys\Desktop\FishingRankingWebApp\FRSolution\FishingRankingWebApp\obj\Debug\netcoreapp3.1\Razor\Views\Admin\EditMember.cshtml.g.cs
-C:\Users\krzys\Desktop\FishingRankingWebApp\FRSolution\FishingRankingWebApp\obj\Debug\netcoreapp3.1\Razor\Views\Admin\FishToCheck.cshtml.g.cs
 C:\Users\krzys\Desktop\FishingRankingWebApp\FRSolution\FishingRankingWebApp\obj\Debug\netcoreapp3.1\Razor\Views\Admin\ListOfMembers.cshtml.g.cs
 C:\Users\krzys\Desktop\FishingRankingWebApp\FRSolution\FishingRankingWebApp\obj\Debug\netcoreapp3.1\Razor\Views\User\AddFish.cshtml.g.cs
 C:\Users\krzys\Desktop\FishingRankingWebApp\FRSolution\FishingRankingWebApp\obj\Debug\netcoreapp3.1\Razor\Views\User\Punctation.cshtml.g.cs
 C:\Users\krzys\Desktop\FishingRankingWebApp\FRSolution\FishingRankingWebApp\obj\Debug\netcoreapp3.1\Razor\Views\User\Ranking.cshtml.g.cs
+C:\Users\krzys\Desktop\FishingRankingWebApp\FRSolution\FishingRankingWebApp\obj\Debug\netcoreapp3.1\Razor\Views\Admin\AddMember.cshtml.g.cs

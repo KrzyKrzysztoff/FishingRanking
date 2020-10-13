@@ -36,13 +36,12 @@ namespace FishingRankingWebApp.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult AddFish(FIshViewModel model, IdentityUser user)
+        public IActionResult AddFish(FishViewModel model, string currentUser)
         {
-            var use3 = userManager.GetUserAsync(HttpContext.User);
-            
-            var user2 = user.UserName;
 
-            return View();
+            userRepository.AddFish(model, currentUser);
+
+            return RedirectToAction("Index", "Home");
         }
     }
 }

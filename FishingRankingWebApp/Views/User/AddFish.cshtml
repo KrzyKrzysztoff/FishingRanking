@@ -1,4 +1,5 @@
-﻿@model FIshViewModel
+﻿
+@model FishingRankingWebApp.ViewModels.FishViewModel
 @inject SignInManager<IdentityUser> signInManager;
 <div class="container">
     <div class="row">
@@ -13,7 +14,10 @@
                         @*Here photo upload*@
                         <br />
                         <div class="form-label-group">
-                            <input class="form-control" asp-for="@User.Identity.Name" readonly>
+                            @{
+                                string currentUser = User.Identity.Name;
+                            }
+                            <input class="form-control" asp-for="@currentUser" readonly>
                         </div>
                         <br />
                         <div class="form-label-group">

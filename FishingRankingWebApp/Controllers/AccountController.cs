@@ -18,6 +18,11 @@ namespace FishingRankingWebApp.Controllers
             this.userManager = userManager;
             this.signInManager = signInManager;
         }
+        public async Task<IActionResult> Logout()
+        {
+            await signInManager.SignOutAsync();
+            return View("Login");
+        }
         [HttpGet]
         public IActionResult Login()
         {
