@@ -10,7 +10,26 @@
 
 
                     <form class="form-signin" method="post">
-                   
+                        @if (Model.FirstName == "Radek")
+                        {
+                            <img src="~/images/rb.jpg"class="rounded mx-auto d-block MiniPhoto  img-thumbnail" alt="Alternate Text" style="width:200px; height:auto;" />
+                        }
+                        @if (Model.FirstName == "Bartek")
+                        {
+                        <img src="~/images/bw.jpg" class="rounded mx-auto d-block MiniPhoto  img-thumbnail" alt="Alternate Text" style="width:200px; height:auto;" />               
+                        }
+                        @if (Model.FirstName == "Marcin")
+                        {
+                         <img src="~/images/ml.jpg" class="rounded mx-auto d-block MiniPhoto  img-thumbnail" alt="Alternate Text" style="width:200px; height:auto;" />
+                        }
+                        @if (Model.FirstName == "Norbert")
+                        {
+                          <img src="~/images/nw.jpg" class="rounded mx-auto d-block MiniPhoto  img-thumbnail" alt="Alternate Text" style="width:200px; height:auto;" />
+                        }
+                        @if (Model.FirstName == "Krzysztof")
+                        {
+                         <img src="~/images/kj.jpg" class="rounded mx-auto d-block MiniPhoto  img-thumbnail" alt="Alternate Text" style="width:200px; height:auto;" />
+                        }                      
                         <br />
                         <div class="form-label-group">
                             <label class="col-form-label-lg" style="text-align:center;display:block;">ID</label>

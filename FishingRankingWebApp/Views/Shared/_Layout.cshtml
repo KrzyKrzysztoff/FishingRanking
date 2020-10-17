@@ -17,19 +17,19 @@
             {
 
                 <li class="nav-item active">
-                    <a formmethod="post" class="nav-link bg-info" asp-action="Punctation" asp-controller="User">Punktacja</a>
+                    <a formmethod="post" class="nav-link bg-info" asp-action="Punctation" asp-controller="User" style="text-align:center">Punktacja</a>
                 </li>
                 <li class="nav-item active">
-                    <a formmethod="post" class="nav-link bg-secondary" asp-action="Index" asp-controller="Home">Ostatnio złapane ryby</a>
+                    <a formmethod="post" class="nav-link bg-secondary" asp-action="Index" asp-controller="Home" style="text-align:center">Ostatnio złapane ryby</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link bg-success" asp-action="AddFish" asp-controller="User">Dodaj rybę</a>
+                    <a class="nav-link bg-success" asp-action="AddFish" asp-controller="User" style="text-align:center">Dodaj rybę</a>
                 </li>
                 @if (User.IsInRole("normalUser"))
                 {
 
                     <li class="nav-item active ">
-                        <a class="nav-link bg-warning" asp-action="Ranking" asp-controller="User">Ranking</a>
+                        <a class="nav-link bg-warning" asp-action="Ranking" asp-controller="User" style="text-align:center">Ranking</a>
                     </li>
                 }
             }
@@ -38,10 +38,10 @@
             {
 
                 <li class="nav-item active">
-                    <a class="nav-link bg-primary" asp-action="ListOfMembers" asp-controller="Admin">Ranking</a>
+                    <a class="nav-link bg-primary" asp-action="ListOfMembers" asp-controller="Admin" style="text-align:center">Ranking</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link bg-danger" asp-action="AddMember" asp-controller="Admin">Dodaj wędkarza</a>
+                    <a class="nav-link bg-danger" asp-action="AddMember" asp-controller="Admin" style="text-align:center">Dodaj wędkarza</a>
                 </li>
 
             }

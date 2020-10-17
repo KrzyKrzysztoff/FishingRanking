@@ -10,9 +10,16 @@
             <div class="card card-signin my-5 ">
                 <div class="card-body">
 
+                    
+                    <form class="form-signin" method="post" enctype="multipart/form-data">
 
-                    <form class="form-signin" method="post">
-                        @*Here photo upload*@
+                      
+
+                        <div class="form-control">
+                            <input asp-for="@Model.FishImage" multiple />
+                            <span asp-validation-for="@Model.FishImage" class="text-danger"></span>
+                        </div>
+
                         <br />
                         <div class="form-label-group">
                             @{
@@ -23,22 +30,28 @@
                         <br />
                         <div class="form-label-group">
                             <input class="form-control" asp-for="@Model.Lenght" placeholder="Długość(cm)">
+                            <span asp-validation-for="@Model.Lenght" class="text-danger"></span>
                         </div>
+                        <br />
                         <br />
                         <div class="form-label-group">
                             <input class="form-control" asp-for="@Model.Location" placeholder="Lokalizacja">
+                            <span asp-validation-for="@Model.Location" class="text-danger"></span>
                         </div>
                         <br />
                         <div class="form-label-group">
                             <select asp-for="@Model.KindOfFish" asp-items="Html.GetEnumSelectList<KindOfFish>()">
-                        
+
                                 <option selected="selected" value="">Wybierz rybę</option>
                             </select>
+                            <span asp-validation-for="@Model.KindOfFish" class="text-danger"></span>
                         </div>
                         <br />
-                        <button class="btn btn-lg btn-dark btn-block" asp-action="AddFish" asp-controller="User" type="submit">Dodaj</button>
+                        <button class="btn btn-lg btn-dark btn-block" asp-action="AddFish" asp-controller="User" type="submit" onclick="return confirm('Jesteś pewny?! Dane bedą nieodwracalne!')">Dodaj</button>
                         <hr class="my-4">
+
                     </form>
+                    
                 </div>
             </div>
         </div>

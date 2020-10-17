@@ -385,4 +385,3 @@ C:\Users\krzys\Desktop\FishingRankingWebApp\FRSolution\FishingRankingWebApp\obj\
 C:\Users\krzys\Desktop\FishingRankingWebApp\FRSolution\FishingRankingWebApp\obj\Debug\netcoreapp3.1\Razor\Views\User\Ranking.cshtml.g.cs
 C:\Users\krzys\Desktop\FishingRankingWebApp\FRSolution\FishingRankingWebApp\obj\Debug\netcoreapp3.1\Razor\Views\Admin\AddMember.cshtml.g.cs
 C:\Users\krzys\Desktop\FishingRankingWebApp\FRSolution\FishingRankingWebApp\obj\Debug\netcoreapp3.1\Razor\Views\Admin\EditUser.cshtml.g.cs
-C:\Users\krzys\Desktop\FishingRankingWebApp\FRSolution\FishingRankingWebApp\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index2.cshtml.g.cs

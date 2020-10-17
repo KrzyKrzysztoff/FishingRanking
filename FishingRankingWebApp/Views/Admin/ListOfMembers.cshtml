@@ -47,7 +47,7 @@
                                     <p>Kleń</p>
                                     break;
                                 case KindOfFish.zander:
-                                    <p>Zander</p>
+                                    <p>Sandacz</p>
                                     break;
                                 case KindOfFish.asp:
                                     <p>Boleń</p>
@@ -61,13 +61,34 @@
                             <form>
                                 <div>
                                     <button type="submit" asp-action="DetailMember" asp-controller="Admin" asp-route-id="@item.Id" class="btn-block btn-primary">Detale</button>
-                                    <button type="submit" asp-action="DeleteMember" asp-controller="Admin" asp-route-id="@item.Id" class="btn-block btn-danger">Usuń</button>
+                                    <button type="submit" asp-action="DeleteMember" asp-controller="Admin" asp-route-id="@item.Id" class="btn-block btn-danger" onclick="return confirm('Jesteś pewny?! Zaminy będą nieodwracalne!')">Usuń</button>
                                     <button type="submit" asp-action="EditUser" asp-controller="Admin" asp-route-id="@item.Id" class="btn-block btn-dark">Edytuj</button>
                                 </div>
                             </form>
                         </td>
 
-                        <td><img src="~/images/logo.jpg" style="width:100px;height:auto;" /></td>
+                        <td>
+                        @if (item.FirstName == "Radek")
+                        {
+                            <img src="~/images/rb.jpg" style="width:150px;height:auto;" />
+                        }
+                        @if(item.FirstName == "Bartek")
+                        {
+                        <img src="~/images/bw.jpg" style="width:150px;height:auto;" />
+                        }
+                        @if(item.FirstName == "Marcin")
+                        {
+                        <img src="~/images/ml.jpg" style="width:150px;height:auto;"/>
+                        }
+                        @if (item.FirstName == "Norbert")
+                        {
+                        <img src="~/images/nw.jpg"  style="width:150px;height:auto;"/>
+                        }
+                        @if (item.FirstName == "Krzysztof")
+                        {
+                        <img src="~/images/kj.jpg" style="width:150px;height:auto;"/>
+                        }
+                        </td>
                     </tr>
 
                 }

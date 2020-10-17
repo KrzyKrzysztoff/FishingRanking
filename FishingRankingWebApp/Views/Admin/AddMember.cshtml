@@ -10,19 +10,30 @@
                         <div class="form-label-group">
                             <label class="col-form-label-lg" style="text-align:center;display:block;">IMIĘ</label>
                             <input class="form-control" asp-for="@Model.FirstName" placeholder="Imię" autofocus>
+                            <span asp-validation-for="@Model.FirstName" class="text-danger"></span>
                         </div>
                         <br />
                         <div class="form-label-group">
                             <label class="col-form-label-lg" style="text-align:center;display:block;">NAZWISKO</label>
                             <input class="form-control" asp-for="@Model.LastName" placeholder="Nazwisko">
+                            <span asp-validation-for="@Model.LastName" class="text-danger"></span>
                         </div>
                         <br />
                         <div class="form-label-group">
                             <label class="col-form-label-lg" style="text-align:center;display:block;">Liczba Punktów</label>
                             <input class="form-control" asp-for="@Model.AmmountOfPoints" placeholder="Punkty">
+                            <span asp-validation-for="@Model.AmmountOfPoints" class="text-danger"></span>
+                        </div>
+                        <br />  
+                        <div class="form-label-group">
+                            <select asp-for="@Model.LastCaughtFish" asp-items="Html.GetEnumSelectList<KindOfFish>()">
+
+                                <option selected="selected" value="">Ostatnio złapana ryba</option>
+                            </select>
+                            <span asp-validation-for="@Model.LastCaughtFish" class="text-danger"></span>
                         </div>
                         <br />
-                        <button class="btn btn-lg btn-dark btn-block" asp-action="AddMember" asp-controller="Admin" type="submit">Dodaj Wędkarza</button>
+                        <button class="btn btn-lg btn-dark btn-block" asp-action="AddMember" asp-controller="Admin" type="submit"  onclick="return confirm('Jesteś pewny?! Zmiany będą nieodwracalne!')">Dodaj Wędkarza</button>
                         <hr class="my-4">
                     </form>
                 </div>

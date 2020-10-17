@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using FishingRankingWebApp.Abstractions;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FishingRankingWebApp.Controllers
 {
+   [Authorize(Roles = "admin, normalUser")]
     public class HomeController : Controller
     {
         private readonly IHomeRepository homeRepository;
@@ -20,6 +22,7 @@ namespace FishingRankingWebApp.Controllers
             var list = homeRepository.GetListOfFishes();
             return View(list);
         }
+        [Authorize(Roles = "admin")]
         public IActionResult DeleteFish(int id)
         {
             var list = homeRepository.DeleteFish(id);

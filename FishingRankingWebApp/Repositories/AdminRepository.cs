@@ -16,6 +16,7 @@ namespace FishingRankingWebApp.Models
         }
         public Member AddMember(Member user)
         {
+   
             context.Add(user);
             context.SaveChanges();
             return user;
@@ -35,6 +36,7 @@ namespace FishingRankingWebApp.Models
             newUser.FirstName = member.FirstName;
             newUser.AmmountOfPoints = member.AmmountOfPoints;
             newUser.LastName = member.LastName;
+            newUser.LastCaughtFish = member.LastCaughtFish;
             context.SaveChanges();
         }
 

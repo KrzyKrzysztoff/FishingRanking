@@ -4,10 +4,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using FishingRankingWebApp.Abstractions;
 using FishingRankingWebApp.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FishingRankingWebApp.Controllers
 {
+   [Authorize(Roles = "admin")]
     public class AdminController : Controller
     {
         private readonly IAdminRepository adminRepository;
@@ -37,16 +39,20 @@ namespace FishingRankingWebApp.Controllers
         [HttpPost]
         public IActionResult EditUser(Member member)
         {
-            
-            adminRepository.EditMember(member);
-            var list = adminRepository.ListOfMembers();
-            return View("ListOfMembers", list);
+            if (ModelState.IsValid)
+            {
+                adminRepository.EditMember(member);
+                var list = adminRepository.ListOfMembers();
+                return View("ListOfMembers", list);
+            }
+            return View();
+          
         }
         [HttpGet]
         public IActionResult EditUser(int id)
         {
-            var member = adminRepository.GetMember(id);
-            return View(member);
+                var member = adminRepository.GetMember(id);
+                return View(member);
         }
         [HttpGet]
         public IActionResult AddMember()
@@ -56,8 +62,12 @@ namespace FishingRankingWebApp.Controllers
         [HttpPost]
         public IActionResult AddMember(Member member)
         {
-            var user = adminRepository.AddMember(member);
-            return View("DetailMember", user);
+            if (ModelState.IsValid)
+            {
+                var user = adminRepository.AddMember(member);
+                return View("DetailMember", user);
+            }
+            return View();
         }
 
   

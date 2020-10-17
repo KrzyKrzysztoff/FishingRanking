@@ -14,18 +14,18 @@ namespace FishingRankingWebApp.Models
     {
         [Key]
         public int Id { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Pole wymagane!")]
         public string FirstName { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Pole wymagane!")]
         public string LastName { get; set; }
-        [Required]
-        public int AmmountOfPoints { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Pole wymagane!")]
+        public int? AmmountOfPoints { get; set; }
         public DateTime RecentActivity { get; set; }
         public string PhotoPath { get; set; }
-       
-        public KindOfFish LastCaughtFish { get; set; }
+        [Required(ErrorMessage = "Pole wymagane!")]
+        public KindOfFish? LastCaughtFish { get; set; }
         public virtual ICollection<Fish> Fishes { get; set; }
+        
 
     }
 }

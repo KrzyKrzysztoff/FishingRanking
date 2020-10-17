@@ -8,9 +8,9 @@ namespace FishingRankingWebApp.ViewModels
 {
     public class LoginViewModel
     {
-        [Required]
+        [Required(ErrorMessage = "Nazwa użytkownika wymagana!")]
         public string Login { get; set; }
-        [Required]
+        [Required(ErrorMessage ="Hasło wymagane!")]
         [DataType(DataType.Password)]
         public string Passowrd { get; set; }
         [Display(Name = "Zapamiętaj mnie")]

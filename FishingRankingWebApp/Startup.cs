@@ -18,12 +18,14 @@ namespace FishingRankingWebApp
     public class Startup
     {
         private readonly IConfiguration configuration;
+    
 
         // This method gets called by the runtime. Use this method to add services to the container.
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public Startup(IConfiguration configuration)
         {
             this.configuration = configuration;
+
         }
         public void ConfigureServices(IServiceCollection services)
         {
@@ -48,13 +50,14 @@ namespace FishingRankingWebApp
 
             }
             app.UseStaticFiles();
-           
             app.UseRouting();
-            app.UseAuthorization();
             app.UseAuthentication();
+            app.UseAuthorization();
             app.UseEndpoints(endpoints =>
             {
+               
                 endpoints.MapControllerRoute(
+                   
                     name: "defualt",
                     pattern: "{Controller=Account}/{Action=Login}/{Id?}"
                     );

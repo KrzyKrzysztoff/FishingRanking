@@ -1,5 +1,6 @@
 ﻿@model IEnumerable<Fish>
-@inject SignInManager<IdentityUser> signInManager;
+@inject SignInManager<IdentityUser> signInManager
+
 <h1 class="bg-danger" style="text-align:center">Ostatnio Złapane Ryby</h1>
 <table class="table">
     <thead class="thead-dark">
@@ -23,17 +24,20 @@
             <td>
                 @switch (item.MemberId)
                 {
-                    case 1:
-                        <p>Krzysztof</p>
+                    case 15:
+                        <p>Krzychu</p>
                         break;
-                    case 2:
-                        <p>Ryba od T.K</p>
+                    case 14:
+                        <p>Łapa</p>
                         break;
-                    case 3:
-                        <p>Ryba od T.J</p>
+                    case 13:
+                        <p>Jopek</p>
                         break;
-                    case 4:
-                        <p>Ryba od R.B</p>
+                    case 12:
+                        <p>Małpa</p>
+                        break;
+                    case 16:
+                        <p>Milan</p>
                         break;
                     default:
                         break;
@@ -76,12 +80,12 @@
             <td>
                 @item.Location
             </td>
-            <td> <img src="~/images/logo.jpg" style="width:150px;height:auto;" /></td>
+            <td> <img src="~/images/@item.FishImage"  style="width:150px;height:auto;" asp-append-version="true" /></td>
             @if (User.IsInRole("admin"))
             {   <td>
 
                     <form method="post">
-                        <button class="bg-danger" type="submit" asp-action="DeleteFish" asp-controller="Home" asp-route-id="@item.Id">Usuń rybkę</button>
+                        <button class="bg-danger" type="submit" asp-action="DeleteFish" asp-controller="Home" asp-route-id="@item.Id" onclick="return confirm('Jesteś pewny?! Zmiany będą nieodwracalne!')">Usuń rybkę</button>
                     </form> 
                 </td>
             }
